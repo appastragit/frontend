@@ -1,8 +1,11 @@
 <template>
   <f7-page>
-    <f7-navbar :title="`${user.firstName} ${user.lastName}`" back-link="Back"></f7-navbar>
+    <f7-navbar
+      :title="`${user.firstName} ${user.lastName}`"
+      back-link="Back"
+    />
     <f7-block strong>
-      {{user.about}}
+      {{ user.about }}
     </f7-block>
     <f7-list>
       <f7-list-item
@@ -12,16 +15,16 @@
         :title="link.title"
         external
         target="_blank"
-      ></f7-list-item>
+      />
     </f7-list>
   </f7-page>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        user: this.$f7route.context.user,
-      }
-    }
-  }
+export default {
+  data() {
+    return {
+      user: this.$f7route.context.user,
+    };
+  },
+};
 </script>

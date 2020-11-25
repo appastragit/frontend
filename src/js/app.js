@@ -17,16 +17,20 @@ import '../css/app.less';
 // Import App Component
 import App from '../components/app.vue';
 
+// Import Vuex store
+import store from './store';
+
 // Init Framework7-Vue Plugin
 Framework7.use(Framework7Vue);
 
 // Init App
 new Vue({
   el: '#app',
-  render: (h) => h(App),
 
   // Register App Component
   components: {
-    app: App
+    app: App,
   },
+  render: (h) => h(App),
+  store,
 });

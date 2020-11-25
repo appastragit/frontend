@@ -1,4 +1,3 @@
-
 import HomePage from '../pages/home.vue';
 import AboutPage from '../pages/about.vue';
 import FormPage from '../pages/form.vue';
@@ -9,7 +8,7 @@ import DynamicRoutePage from '../pages/dynamic-route.vue';
 import RequestAndLoad from '../pages/request-and-load.vue';
 import NotFoundPage from '../pages/404.vue';
 
-var routes = [
+const routes = [
   {
     path: '/',
     component: HomePage,
@@ -37,23 +36,23 @@ var routes = [
   },
   {
     path: '/request-and-load/user/:userId/',
-    async: function (routeTo, routeFrom, resolve, reject) {
+    async(routeTo, routeFrom, resolve, reject) {
       // Router instance
-      var router = this;
+      const router = this;
 
       // App instance
-      var app = router.app;
+      const { app } = router;
 
       // Show Preloader
       app.preloader.show();
 
       // User ID from request
-      var userId = routeTo.params.userId;
+      const { userId } = routeTo.params;
 
       // Simulate Ajax Request
-      setTimeout(function () {
+      setTimeout(() => {
         // We got user data from request
-        var user = {
+        const user = {
           firstName: 'Vladimir',
           lastName: 'Kharlampidi',
           about: 'Hello, i am creator of Framework7! Hope you like it!',
@@ -66,7 +65,7 @@ var routes = [
               title: 'Framework7 Forum',
               url: 'http://forum.framework7.io',
             },
-          ]
+          ],
         };
         // Hide Preloader
         app.preloader.hide();
@@ -78,9 +77,9 @@ var routes = [
           },
           {
             context: {
-              user: user,
-            }
-          }
+              user,
+            },
+          },
         );
       }, 1000);
     },

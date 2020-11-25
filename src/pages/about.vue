@@ -1,6 +1,9 @@
 <template>
   <f7-page name="about">
-    <f7-navbar title="About" back-link="Back"></f7-navbar>
+    <f7-navbar
+      title="About"
+      back-link="Back"
+    />
     <f7-block-title>About My App</f7-block-title>
     <f7-block strong>
       <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>

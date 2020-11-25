@@ -1,41 +1,72 @@
 <template>
-  <f7-app :params="f7params" >
+  <f7-app :params="f7params">
+    <!-- Left panel with cover effect when hidden -->
+    <f7-panel
+      left
+      cover
+      theme-dark
+      :visible-breakpoint="960"
+    >
+      <f7-view>
+        <f7-page>
+          <f7-navbar title="Left Panel" />
+          <f7-block-title>Left View Navigation</f7-block-title>
+          <f7-list>
+            <f7-list-item
+              link="/left-page-1/"
+              title="Left Page 1"
+            />
+            <f7-list-item
+              link="/left-page-2/"
+              title="Left Page 2"
+            />
+          </f7-list>
+          <f7-block-title>Control Main View</f7-block-title>
+          <f7-list>
+            <f7-list-item
+              link="/about/"
+              view=".view-main"
+              panel-close
+              title="About"
+            />
+            <f7-list-item
+              link="/form/"
+              view=".view-main"
+              panel-close
+              title="Form"
+            />
+            <f7-list-item
+              link="#"
+              view=".view-main"
+              back
+              panel-close
+              title="Back in history"
+            />
+          </f7-list>
+        </f7-page>
+      </f7-view>
+    </f7-panel>
 
-  <!-- Left panel with cover effect when hidden -->
-  <f7-panel left cover theme-dark :visible-breakpoint="960">
-    <f7-view>
-      <f7-page>
-        <f7-navbar title="Left Panel"></f7-navbar>
-        <f7-block-title>Left View Navigation</f7-block-title>
-        <f7-list>
-          <f7-list-item link="/left-page-1/" title="Left Page 1"></f7-list-item>
-          <f7-list-item link="/left-page-2/" title="Left Page 2"></f7-list-item>
-        </f7-list>
-        <f7-block-title>Control Main View</f7-block-title>
-        <f7-list>
-          <f7-list-item link="/about/" view=".view-main" panel-close title="About"></f7-list-item>
-          <f7-list-item link="/form/" view=".view-main" panel-close title="Form"></f7-list-item>
-          <f7-list-item link="#" view=".view-main" back panel-close title="Back in history"></f7-list-item>
-        </f7-list>
-      </f7-page>
-    </f7-view>
-  </f7-panel>
+    <!-- Right panel with reveal effect-->
+    <f7-panel
+      right
+      reveal
+      theme-dark
+    >
+      <f7-view>
+        <f7-page>
+          <f7-navbar title="Right Panel" />
+          <f7-block>Right panel content goes here</f7-block>
+        </f7-page>
+      </f7-view>
+    </f7-panel>
 
-
-  <!-- Right panel with reveal effect-->
-  <f7-panel right reveal theme-dark>
-    <f7-view>
-      <f7-page>
-        <f7-navbar title="Right Panel"></f7-navbar>
-        <f7-block>Right panel content goes here</f7-block>
-      </f7-page>
-    </f7-view>
-  </f7-panel>
-
-
-  <!-- Your main view, should have "view-main" class -->
-  <f7-view main class="safe-areas" url="/"></f7-view>
-
+    <!-- Your main view, should have "view-main" class -->
+    <f7-view
+      main
+      class="safe-areas"
+      url="/"
+    />
 
     <!-- Popup -->
     <f7-popup id="my-popup">
@@ -43,7 +74,9 @@
         <f7-page>
           <f7-navbar title="Popup">
             <f7-nav-right>
-              <f7-link popup-close>Close</f7-link>
+              <f7-link popup-close>
+                Close
+              </f7-link>
             </f7-nav-right>
           </f7-navbar>
           <f7-block>
@@ -64,17 +97,20 @@
               placeholder="Your username"
               :value="username"
               @input="username = $event.target.value"
-            ></f7-list-input>
+            />
             <f7-list-input
               type="password"
               name="password"
               placeholder="Your password"
               :value="password"
               @input="password = $event.target.value"
-            ></f7-list-input>
+            />
           </f7-list>
           <f7-list>
-            <f7-list-button title="Sign In" @click="alertLoginData"></f7-list-button>
+            <f7-list-button
+              title="Sign In"
+              @click="alertLoginData"
+            />
             <f7-block-footer>
               Some text about login information.<br>Click "Sign In" to close Login Screen
             </f7-block-footer>
@@ -86,42 +122,40 @@
 </template>
 <script>
 
-  import routes from '../js/routes.js';
+import routes from '../js/routes.js';
 
-  export default {
-    data() {
-      return {
-        // Framework7 Parameters
-        f7params: {
-          name: 'appAstra', // App name
-          theme: 'auto', // Automatic theme detection
+export default {
+  data() {
+    return {
+      // Framework7 Parameters
+      f7params: {
+        name: 'appAstra', // App name
+        theme: 'auto', // Automatic theme detection
 
-
-
-          // App routes
-          routes: routes,
-          // Register service worker
-          serviceWorker: {
-            path: '/service-worker.js',
-          },
+        // App routes
+        routes,
+        // Register service worker
+        serviceWorker: {
+          path: '/service-worker.js',
         },
-        // Login screen data
-        username: '',
-        password: '',
-      }
-    },
-    methods: {
-      alertLoginData() {
-        this.$f7.dialog.alert('Username: ' + this.username + '<br>Password: ' + this.password, () => {
-          this.$f7.loginScreen.close();
-        });
-      }
-    },
-    mounted() {
-      this.$f7ready((f7) => {
+      },
+      // Login screen data
+      username: '',
+      password: '',
+    };
+  },
+  mounted() {
+    this.$f7ready((f7) => {
 
-        // Call F7 APIs here
+      // Call F7 APIs here
+    });
+  },
+  methods: {
+    alertLoginData() {
+      this.$f7.dialog.alert(`Username: ${this.username}<br>Password: ${this.password}`, () => {
+        this.$f7.loginScreen.close();
       });
-    }
-  }
+    },
+  },
+};
 </script>
