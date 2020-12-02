@@ -51,6 +51,7 @@
               button-large
               button-raised
               fill
+              href="/main/"
             >
               Entrar
             </f7-button>
