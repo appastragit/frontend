@@ -1,4 +1,4 @@
-# appAstra
+# appastra
 
 ## Framework7 CLI Options
 
@@ -6,16 +6,15 @@ Framework7 app created with following options:
 
 ```
 {
-  "cwd": "C:\\Users\\franw\\Desktop\\appAstra\\frontend",
+  "cwd": "C:\\Users\\Alber\\Desktop\\appAstra\\frontend",
   "type": [
-    "pwa",
     "web"
   ],
-  "name": "appAstra",
+  "name": "appastra",
   "framework": "vue",
-  "template": "split-view",
+  "template": "blank",
   "bundler": "webpack",
-  "cssPreProcessor": "less",
+  "cssPreProcessor": "scss",
   "theming": {
     "customColor": false,
     "color": "#007aff",
@@ -46,10 +45,6 @@ Framework7 app created with following options:
 There is a webpack bundler setup. It compiles and bundles all "front-end" resources. You should work only with files located in `/src` folder. Webpack config located in `build/webpack.config.js`.
 
 Webpack has specific way of handling static assets (CSS files, images, audios). You can learn more about correct way of doing things on [official webpack documentation](https://webpack.js.org/guides/asset-management/).
-
-## PWA
-
-This is a PWA. Don't forget to check what is inside of your `service-worker.js`. It is also recommended that you disable service worker (or enable "Update on reload") in browser dev tools during development.
 ## Assets
 
 Assets (icons, splash screens) source images located in `assets-src` folder. To generate your own icons and splash screen images, you will need to replace all assets in this directory with your own images (pay attention to image size and format), and run the following command in the project directory:

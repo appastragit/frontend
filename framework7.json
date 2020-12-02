@@ -1,0 +1,26 @@
+{
+  "cwd": "C:\\Users\\Alber\\Desktop\\appAstra\\frontend",
+  "type": [
+    "web"
+  ],
+  "name": "appastra",
+  "framework": "vue",
+  "template": "blank",
+  "bundler": "webpack",
+  "cssPreProcessor": "scss",
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false,
+  "webpack": {
+    "developmentSourceMap": true,
+    "productionSourceMap": true,
+    "hashAssets": false,
+    "preserveAssetsPaths": false,
+    "inlineAssets": true
+  }
+}
