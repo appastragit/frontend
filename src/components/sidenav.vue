@@ -19,18 +19,19 @@
           </div>
         </div>
       </div>
-      <f7-list>
+      <f7-list class="list-sidemenu">
         <f7-list-item
           v-for="(item, i) in sideMenuContent"
           :key="i"
+          class="sidenav-item"
         >
           <img
             :src="item.Icon"
             width="32px"
+            class="margin-right"
           >
           <a
             href="#"
-            class="sidenav-item"
           >
             {{ item.Title }}
           </a>
@@ -108,6 +109,8 @@ export default {
   padding-right: 15px;
 }
 .sidenav-item {
-  text-align: left;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
 }
 </style>
