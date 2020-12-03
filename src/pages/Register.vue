@@ -6,8 +6,8 @@
       <f7-row class="content-register">
         <f7-col width="100">
           <div>
-            <img 
-              :src="appLogoRegister"
+            <img
+              :src="logoRegister"
               width="85%"
               class="margin-left"
             >
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import appLogoRegister from '../static/img/appastradarkregister.png';
+import logoRegister from '../static/img/appastradarkregister.png';
 
 export default {
   name: 'Register',
@@ -78,14 +78,16 @@ export default {
     };
   },
 
+  computed: {
+    logoRegister() {
+      return logoRegister;
+    },
+  },
+
   methods: {
 
   },
-  computed: {
-    appLogoRegister() {
-      return appLogRegister;
-    }
-  },
+
 };
 </script>
 

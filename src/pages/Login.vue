@@ -5,10 +5,9 @@
     >
       <f7-row class="content-login">
         <f7-col width="100">
-          
           <div>
-            <img 
-              :src="appLogoLogin"
+            <img
+              :src="logoLogin"
               width="85%"
               class="margin-left"
             >
@@ -79,7 +78,9 @@
 </template>
 
 <script>
-import appLogoLogin from '../static/img/appastradarklogin.png';
+
+import logoLogin from '../static/img/appastradarklogin.png';
+
 export default {
   name: 'Login',
   data() {
@@ -89,9 +90,9 @@ export default {
     };
   },
   computed: {
-    appLogoLogin() {
-      return appLogoLogin;
-    }
+    logoLogin() {
+      return logoLogin;
+    },
   },
 
   methods: {
