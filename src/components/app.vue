@@ -13,6 +13,7 @@
 import routes from '../js/routes';
 
 export default {
+  name: 'Sidenav',
   data() {
     return {
       // Framework7 Parameters

@@ -1,5 +1,6 @@
 <template>
   <f7-page>
+    <Navbar />
     <Sidenav />
     <f7-button
       raised
@@ -13,11 +14,13 @@
 <script>
 
 import Sidenav from '../components/sidenav.vue';
+import Navbar from '../components/navbar.vue';
 
 export default {
   name: 'Main',
   components: {
     Sidenav,
+    Navbar,
   },
 };
 </script>
