@@ -5,8 +5,12 @@
     >
       <f7-row class="content-register">
         <f7-col width="100">
-          <div class="label-text brand-text">
-            App Astra (Register)
+          <div>
+            <img 
+              :src="appLogoRegister"
+              width="85%"
+              class="margin-left"
+            >
           </div>
         </f7-col>
         <f7-col width="100">
@@ -63,6 +67,7 @@
 </template>
 
 <script>
+import appLogoRegister from '../static/img/appastradarkregister.png';
 
 export default {
   name: 'Register',
@@ -75,6 +80,11 @@ export default {
 
   methods: {
 
+  },
+  computed: {
+    appLogoRegister() {
+      return appLogRegister;
+    }
   },
 };
 </script>
