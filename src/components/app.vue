@@ -29,8 +29,9 @@ export default {
   },
 
   mounted() {
-    this.$f7ready((f7) => {
-
+    this.$f7ready((
+      // f7
+    ) => {
       // Call F7 APIs here
     });
   },

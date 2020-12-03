@@ -22,6 +22,7 @@ import store from '../store/index';
 Framework7.use(Framework7Vue);
 
 // Init App
+// eslint-disable-next-line no-new
 new Vue({
   el: '#app',
   // Register App Component

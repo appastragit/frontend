@@ -19,11 +19,11 @@
           </div>
         </div>
       </div>
-      <f7-list class="list-sidemenu">
+      <f7-list>
         <f7-list-item
           v-for="(item, i) in sideMenuContent"
           :key="i"
-          class="sidenav-item"
+          :class="item.customClass"
         >
           <img
             :src="item.Icon"
@@ -56,26 +56,31 @@ export default {
           Title: 'Mis clases',
           Role: 'Any',
           Icon: iconPrueba,
+          customClass: 'noBorder',
         },
         {
           Title: 'Tareas',
           Role: 'Any',
           Icon: iconPrueba,
+          customClass: 'borderBtn',
         },
         {
           Title: 'Mi Perfil',
           Role: 'Any',
           Icon: iconPrueba,
+          customClass: 'borderBtn',
         },
         {
           Title: 'Gestionar usuarios',
           Role: 'Admin',
           Icon: iconPrueba,
+          customClass: 'borderBtn',
         },
         {
           Title: 'Gestionar clases',
           Role: 'Admin',
           Icon: iconPrueba,
+          customClass: 'borderBtn',
         },
       ],
     };
@@ -108,7 +113,14 @@ export default {
   padding-left: 15px;
   padding-right: 15px;
 }
-.sidenav-item {
+
+.noBorder {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+.borderBtn {
+  border-top: 1px solid rgb(221, 219, 219);
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
