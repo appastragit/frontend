@@ -57,7 +57,7 @@
               fill
               class="margin-top"
             >
-              Registrarse!!
+              Registrarse!
             </f7-button>
           </f7-list>
         </f7-col>
