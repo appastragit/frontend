@@ -6,7 +6,7 @@
       raised
       panel-open="left"
     >
-      Open left panel
+      Open left panel.
     </f7-button>
   </f7-page>
 </template>
