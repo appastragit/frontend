@@ -2,12 +2,7 @@
   <f7-page>
     <Navbar />
     <Sidenav />
-    <f7-button
-      raised
-      panel-open="left"
-    >
-      Open left panel.
-    </f7-button>
+    <class />
   </f7-page>
 </template>
 
@@ -15,12 +10,14 @@
 
 import Sidenav from '../components/sidenav.vue';
 import Navbar from '../components/navbar.vue';
+import Class from '../components/class.vue';
 
 export default {
   name: 'Main',
   components: {
     Sidenav,
     Navbar,
+    Class,
   },
 };
 </script>

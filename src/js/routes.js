@@ -1,6 +1,7 @@
 import LoginPage from '../pages/Login.vue';
 import RegisterPage from '../pages/Register.vue';
 import MainPage from '../pages/Main.vue';
+import ClassPage from '../pages/Class.vue';
 
 const routes = [
   {
@@ -18,6 +19,10 @@ const routes = [
   {
     path: '/main',
     component: MainPage,
+  },
+  {
+    path: '/class',
+    component: ClassPage,
   },
 ];
 
