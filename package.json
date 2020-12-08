@@ -6,7 +6,8 @@
   "repository": "",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "npm run dev",
+    "start": "npm run prod",
+    "prod": "webpack-dev-server --config ./build/webpack.config.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
     "build-dev": "cross-env NODE_ENV=development node ./build/build.js",
     "build-prod": "node ./build/build.js",
