@@ -47,7 +47,7 @@ module.exports = {
     contentBase: '/www/',
     disableHostCheck: true,
     historyApiFallback: true,
-    host: 0.0.0.0,
+    host: '0.0.0.0',
     watchOptions: {
       poll: 1000,
     },
