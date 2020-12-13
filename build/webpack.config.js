@@ -44,7 +44,7 @@ module.exports = {
     contentBase: '/www/',
     disableHostCheck: true,
     historyApiFallback: true,
-    host: 'frontend-appastra.apps.appastra.com',
+    host: 'frontend-appastra.apps.geekcloud.es',
     watchOptions: {
       poll: 1000,
     },
