@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-
 const path = require('path');
 
 function resolvePath(dir) {
@@ -15,8 +14,6 @@ function resolvePath(dir) {
 
 const env = process.env.NODE_ENV || 'development';
 const target = process.env.TARGET || 'web';
-
-
 
 module.exports = {
   mode: env,
@@ -47,7 +44,7 @@ module.exports = {
     contentBase: '/www/',
     disableHostCheck: true,
     historyApiFallback: true,
-    host: '0.0.0.0',
+    host: 'frontend-appastra.apps.appastra.com',
     watchOptions: {
       poll: 1000,
     },
@@ -67,13 +64,11 @@ module.exports = {
           resolvePath('node_modules/framework7'),
           resolvePath('node_modules/framework7-vue'),
 
-
           resolvePath('node_modules/template7'),
           resolvePath('node_modules/dom7'),
           resolvePath('node_modules/ssr-window'),
         ],
       },
-
 
       {
         test: /\.vue$/,
@@ -85,8 +80,8 @@ module.exports = {
           (env === 'development' ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           }),
           'css-loader',
           'postcss-loader',
@@ -98,8 +93,8 @@ module.exports = {
           (env === 'development' ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           }),
           'css-loader',
           'postcss-loader',
@@ -112,8 +107,8 @@ module.exports = {
           (env === 'development' ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           }),
           'css-loader',
           'postcss-loader',
@@ -126,8 +121,8 @@ module.exports = {
           (env === 'development' ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           }),
           'css-loader',
           'postcss-loader',
@@ -192,7 +187,7 @@ module.exports = {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
+        useShortDoctype: true,
       } : false,
     }),
     new MiniCssExtractPlugin({
@@ -208,7 +203,6 @@ module.exports = {
 
       ],
     }),
-
 
   ],
 };
