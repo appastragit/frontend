@@ -80,6 +80,7 @@
 <script>
 
 import logoLogin from '../static/img/appastradarklogin.png';
+import Api from '../js/services/api';
 
 export default {
   name: 'Login',
@@ -87,12 +88,22 @@ export default {
     return {
       username: '',
       password: '',
+      clases: [],
     };
   },
   computed: {
     logoLogin() {
       return logoLogin;
     },
+  },
+
+  async mounted() {
+    await Api.getClass()
+      .then((data) => {
+        this.clases = data;
+      });
+
+    console.log(this.clases);
   },
 
   methods: {
