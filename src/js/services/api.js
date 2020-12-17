@@ -12,4 +12,17 @@ export default {
 
     return data;
   },
+  async login(finalObj) {
+    let data;
+    await axios
+      .post(`${Config.API_BASE_URL}/api/usuarios/login`, {
+        username: finalObj.username,
+        pass: finalObj.pass,
+      })
+      // eslint-disable-next-line no-return-assign
+      .then((response) => data = response.data)
+      .catch((error) => console.log(error));
+
+    return data;
+  },
 };

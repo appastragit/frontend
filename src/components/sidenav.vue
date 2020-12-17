@@ -15,7 +15,7 @@
         </div>
         <div class="menu-header-item">
           <div class="menu-userdata">
-            Antonio Manuel Rodiguez de las Fuentes
+            {{ data.nombre }}
           </div>
         </div>
       </div>
@@ -37,6 +37,14 @@
           </a>
         </f7-list-item>
       </f7-list>
+      <f7-button
+        fill
+        color="red"
+        panel-close="left"
+        @click="logout()"
+      >
+        Desconectarse
+      </f7-button>
     </f7-block>
   </f7-panel>
 </template>
@@ -51,6 +59,7 @@ export default {
 
   data() {
     return {
+      data: [],
       sideMenuContent: [
         {
           Title: 'Mis clases',
@@ -94,9 +103,18 @@ export default {
       return iconPrueba;
     },
   },
-
+  mounted() {
+    this.getUserData();
+  },
   methods: {
-
+    getUserData() {
+      this.data = JSON.parse(localStorage.getItem('loggedUser'));
+      console.log(this.data);
+    },
+    logout() {
+      localStorage.removeItem('loggedUser');
+      this.$f7router.navigate('/login');
+    },
   },
 };
 </script>

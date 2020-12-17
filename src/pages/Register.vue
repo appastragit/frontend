@@ -45,6 +45,162 @@
               required
               @input="password = $event.target.value"
             />
+            <f7-list-input
+              outline
+              label="Nombre"
+              item-label
+              type="text"
+              placeholder="Nombre"
+              clear-button
+              name="nombre"
+              max="255"
+              autocomplete="on"
+              required
+              @input="nombre = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Apellidos"
+              item-label
+              type="text"
+              placeholder="Apellidos"
+              clear-button
+              name="apellidos"
+              max="255"
+              autocomplete="on"
+              required
+              @input="apellidos = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Email"
+              item-label
+              type="text"
+              placeholder="Email"
+              clear-button
+              name="email"
+              max="255"
+              autocomplete="on"
+              required
+              @input="email = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Fecha de nacimiento"
+              item-label
+              type="text"
+              placeholder="Fecha de nacimiento"
+              clear-button
+              name="fecha_nacimiento"
+              max="255"
+              autocomplete="on"
+              required
+              @input="fecha_nacimiento = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="País"
+              item-label
+              type="text"
+              placeholder="País"
+              clear-button
+              name="d_pais"
+              max="255"
+              autocomplete="on"
+              required
+              @input="d_pais = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Provincia"
+              item-label
+              type="text"
+              placeholder="Provincia"
+              clear-button
+              name="d_provincia"
+              max="255"
+              autocomplete="on"
+              required
+              @input="d_provincia = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Localidad"
+              item-label
+              type="text"
+              placeholder="Localidad"
+              clear-button
+              name="d_localidad"
+              max="255"
+              autocomplete="on"
+              required
+              @input="d_localidad = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Código Postal"
+              item-label
+              type="text"
+              placeholder="Código Postal"
+              clear-button
+              name="d_cp"
+              max="255"
+              autocomplete="on"
+              required
+              @input="d_cp = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Calle"
+              item-label
+              type="text"
+              placeholder="Calle"
+              clear-button
+              name="d_calle"
+              max="255"
+              autocomplete="on"
+              required
+              @input="d_calle = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Número"
+              item-label
+              type="text"
+              placeholder="Número Edificio/Casa/Local"
+              clear-button
+              name="d_numero"
+              max="255"
+              autocomplete="on"
+              required
+              @input="d_numero = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Piso"
+              item-label
+              type="text"
+              placeholder="Piso"
+              clear-button
+              name="d_piso"
+              max="255"
+              autocomplete="on"
+              required
+              @input="d_piso = $event.target.value"
+            />
+            <f7-list-input
+              outline
+              label="Puerta"
+              item-label
+              type="text"
+              placeholder="Puerta"
+              clear-button
+              name="d_puerta"
+              max="255"
+              autocomplete="on"
+              required
+              @input="d_puerta = $event.target.value"
+            />
           </f7-list>
         </f7-col>
         <f7-col width="100">
@@ -56,6 +212,7 @@
               button-raised
               fill
               class="margin-top"
+              @click="submit()"
             >
               Registrarse!
             </f7-button>
@@ -75,6 +232,34 @@ export default {
     return {
       username: '',
       password: '',
+      nombre: '',
+      apellidos: '',
+      email: '',
+      fecha_nacimiento: '',
+      d_pais: '',
+      d_provincia: '',
+      d_localidad: '',
+      d_cp: '',
+      d_calle: '',
+      d_numero: '',
+      d_piso: '',
+      d_puerta: '',
+      finalObj: {
+        username: '',
+        password: '',
+        nombre: '',
+        apellidos: '',
+        email: '',
+        fecha_nacimiento: '',
+        d_pais: '',
+        d_provincia: '',
+        d_localidad: '',
+        d_cp: '',
+        d_calle: '',
+        d_numero: '',
+        d_piso: '',
+        d_puerta: '',
+      },
     };
   },
 
@@ -85,7 +270,22 @@ export default {
   },
 
   methods: {
-
+    submit() {
+      this.finalObj.username = this.username;
+      this.finalObj.password = this.password;
+      this.finalObj.nombre = this.nombre;
+      this.finalObj.apellidos = this.apellidos;
+      this.finalObj.email = this.email;
+      this.finalObj.fecha_nacimiento = this.fecha_nacimiento;
+      this.finalObj.d_pais = this.d_pais;
+      this.finalObj.d_provincia = this.d_provincia;
+      this.finalObj.d_localidad = this.d_localidad;
+      this.finalObj.d_cp = this.d_cp;
+      this.finalObj.d_calle = this.d_calle;
+      this.finalObj.d_numero = this.d_numero;
+      this.finalObj.d_piso = this.d_piso;
+      this.finalObj.d_puerta = this.d_puerta;
+    },
   },
 
 };

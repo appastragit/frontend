@@ -55,7 +55,7 @@
               button-large
               button-raised
               fill
-              href="/main/"
+              @click="submit()"
             >
               Entrar
             </f7-button>
@@ -88,7 +88,11 @@ export default {
     return {
       username: '',
       password: '',
-      clases: [],
+      finalObj: {
+        username: '',
+        pass: '',
+      },
+      // clases: [],
     };
   },
   computed: {
@@ -97,7 +101,7 @@ export default {
     },
   },
 
-  async mounted() {
+  /* async mounted() {
     await Api.getClass()
       .then((data) => {
         this.clases = data;
@@ -105,9 +109,21 @@ export default {
 
     console.log(this.clases);
   },
-
+*/
   methods: {
-
+    async submit() {
+      this.finalObj.username = this.username;
+      this.finalObj.pass = this.password;
+      await Api.login(this.finalObj)
+        .then((data) => {
+          if (data.status === 'OK') {
+            localStorage.setItem('loggedUser', JSON.stringify(data.usuario[0]));
+            this.$f7router.navigate('/main');
+          } else {
+            // LOGIN INVALIDO
+          }
+        });
+    },
   },
 };
 </script>
