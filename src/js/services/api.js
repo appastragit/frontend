@@ -14,7 +14,7 @@ export default {
   async login(finalObj) {
     let data;
     await axios
-      .post(`${Config.API_BASE_URL}/api/usuarios/login`, {
+      .post('https://api-appastra.apps.appastra.com/api/usuarios/login', {
         username: finalObj.username,
         pass: finalObj.pass,
       })
@@ -27,7 +27,7 @@ export default {
   async register(finalObj) {
     let data;
     await axios
-      .post(`${Config.API_BASE_URL}/api/usuarios/login`, {
+      .post('https://api-appastra.apps.appastra.com/api/usuarios/new', {
         username: finalObj.username,
         password: finalObj.password,
         nombre: finalObj.nombre,
