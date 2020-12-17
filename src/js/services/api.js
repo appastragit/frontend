@@ -1,11 +1,11 @@
 import axios from 'axios';
-// import * as Config from '../constants';
+import * as Config from '../constants';
 
 export default {
   async getClass() {
     let data;
     await axios
-      .get('http://api-appastra.apps.appastra.com/api/clases/getall/')
+      .get(`${Config.API_BASE_URL}/api/clases/getall/`)
       // eslint-disable-next-line no-return-assign
       .then((response) => (data = response.data))
       .catch((error) => console.log(error));
@@ -15,7 +15,7 @@ export default {
   async login(finalObj) {
     let data;
     await axios
-      .post('http://api-appastra.apps.appastra.com/api/usuarios/login', {
+      .post(`${Config.API_BASE_URL}/api/usuarios/login`, {
         username: finalObj.username,
         pass: finalObj.pass,
       })
@@ -28,7 +28,7 @@ export default {
   async register(finalObj) {
     let data;
     await axios
-      .post('http://api-appastra.apps.appastra.com/api/usuarios/new', {
+      .post(`${Config.API_BASE_URL}/api/usuarios/new`, {
         username: finalObj.username,
         password: finalObj.password,
         nombre: finalObj.nombre,

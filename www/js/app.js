@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "79bd379bc5e69bba91a2";
+/******/ 	var hotCurrentHash = "c5323f89a6d772ac961e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -6345,7 +6345,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"API_BASE_URL\", function() { return API_BASE_URL; });\n// eslint-disable-next-line import/prefer-default-export\nvar API_BASE_URL = process.env.api || 'http://localhost:8080';\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/process/browser.js */ \"./node_modules/process/browser.js\")))\n\n//# sourceURL=webpack:///./src/js/constants.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"API_BASE_URL\", function() { return API_BASE_URL; });\n// eslint-disable-next-line import/prefer-default-export\n// export const API_BASE_URL = process.env.api || 'http://localhost:8080';\n// eslint-disable-next-line import/prefer-default-export\nvar API_BASE_URL = 'http://api-appastra.apps.appastra.com'; // prueba\n\n//# sourceURL=webpack:///./src/js/constants.js?");
 
 /***/ }),
 
