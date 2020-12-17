@@ -110,6 +110,7 @@ export default {
     console.log(this.clases);
   },
 */
+
   methods: {
     async submit() {
       this.finalObj.username = this.username;
