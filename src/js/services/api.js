@@ -5,11 +5,10 @@ export default {
   async getClass() {
     let data;
     await axios
-      .get('http://api-appastra.apps.appastra.com/api/clases/getall/')
+      .get('https://api-appastra.apps.appastra.com/api/clases/getall/')
       // eslint-disable-next-line no-return-assign
       .then((response) => (data = response.data))
       .catch((error) => console.log(error));
-
     return data;
   },
   async login(finalObj) {
@@ -47,7 +46,6 @@ export default {
       // eslint-disable-next-line no-return-assign
       .then((response) => data = response.data)
       .catch((error) => console.log(error));
-
     return data;
   },
 };
