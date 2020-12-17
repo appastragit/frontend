@@ -1,9 +1,16 @@
 import axios from 'axios';
 
+const axiosInstance = axios.create({
+  headers: {
+    "Access-Control-Allow-Origin": "*"
+  }
+});
+
 export default {
+
   async getClass() {
     let data;
-    await axios
+    await axiosInstance
       .get('https://api-appastra.apps.appastra.com/api/clases/getall/')
       // eslint-disable-next-line no-return-assign
       .then((response) => (data = response.data))
@@ -12,7 +19,7 @@ export default {
   },
   async login(finalObj) {
     let data;
-    await axios
+    await axiosInstance
       .post('https://api-appastra.apps.appastra.com/api/usuarios/login', {
         username: finalObj.username,
         pass: finalObj.pass,
@@ -25,7 +32,7 @@ export default {
   },
   async register(finalObj) {
     let data;
-    await axios
+    await axiosInstance
       .post('https://api-appastra.apps.appastra.com/api/usuarios/new', {
         username: finalObj.username,
         password: finalObj.password,
