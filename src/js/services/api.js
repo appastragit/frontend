@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as Config from '../constants';
 
 export default {
   async getClass() {
