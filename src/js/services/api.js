@@ -52,6 +52,6 @@ export default {
       // eslint-disable-next-line no-return-assign
       .then((response) => data = response.data)
       .catch((error) => console.log(error));
-    return data;
+    return data; 
   },
 };
