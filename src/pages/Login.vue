@@ -57,7 +57,7 @@
               fill
               @click="submit()"
             >
-              Entrar
+              OPENSHIFT
             </f7-button>
             <f7-button
               col
