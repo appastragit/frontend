@@ -225,6 +225,7 @@
 
 <script>
 import logoRegister from '../static/img/appastradarkregister.png';
+import Api from '../js/services/api';
 
 export default {
   name: 'Register',
@@ -270,7 +271,7 @@ export default {
   },
 
   methods: {
-    submit() {
+    async submit() {
       this.finalObj.username = this.username;
       this.finalObj.password = this.password;
       this.finalObj.nombre = this.nombre;
@@ -285,6 +286,16 @@ export default {
       this.finalObj.d_numero = this.d_numero;
       this.finalObj.d_piso = this.d_piso;
       this.finalObj.d_puerta = this.d_puerta;
+      console.log(this.finalObj);
+      await Api.register(this.finalObj)
+        .then((data) => {
+          if (data.status === 'OK') {
+            console.log("registro OK");
+            this.$f7router.navigate('/login');
+          } else {
+            console.log("registro NO OK");
+          }
+        });
     },
   },
 
